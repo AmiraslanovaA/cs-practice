@@ -1,4 +1,4 @@
-p = int(input(""))
+p = float(input(""))
 n = int(input(""))
 ce = 0
 cp = 0
