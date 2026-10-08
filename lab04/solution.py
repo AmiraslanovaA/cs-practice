@@ -17,9 +17,17 @@ def average(scores):
 ##def ranking(names,scores):
 
 
+def above_average(names,scores):
+    lst = []
+    for i in range(len(scores)):
+        if scores[i] > average(scores):
+            lst.append(names[i])
+    return lst
+
+
 names =  ["Аня", "Боря", "Вика"]
 scores = [7.0,   9.0,    9.0]
 print(winner(names,scores))
 print(average(scores))
 ##ranking(names: list[str], scores: list[float]) -> list[str]
-##above_average(names: list[str], scores: list[float]) -> list[str]
+print(above_average(names,scores))
