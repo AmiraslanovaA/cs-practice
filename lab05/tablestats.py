@@ -1,20 +1,22 @@
-def read_rows(lines):
-    rows =[]
+ddef read_rows(lines: list[str]) -> list[dict]:
+    rows = []
     header = []
     for line in lines:
-        line = line.split()
+        line = line.strip()
         if not line:
             continue
-        parts = [part.strip() for part in line.split(',')]
-        if header is None:
-            header = parts
+        values = line.split(",")
+        for i in range(len(values)):
+            values[i] = values[i].strip()
+        if not header:
+            header = values
             continue
-        if len(parts) != len(header):
+        if len(values) != len(header):
             continue
-        row_dict = {}
+        row = {}
         for i in range(len(header)):
-            row_dict[header[i]] = parts[i]
-        rows.append(row_dict)
+            row[header[i]] = values[i]
+        rows.append(row)
     return rows
 def count_types(rows):
     counts = {}
