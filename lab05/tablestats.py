@@ -1,4 +1,4 @@
-ddef read_rows(lines: list[str]) -> list[dict]:
+def read_rows(lines: list[str]) -> list[dict]:
     rows = []
     header = []
     for line in lines:
