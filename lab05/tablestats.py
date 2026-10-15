@@ -1,6 +1,6 @@
 def read_rows(lines):
     rows =[]
-    header = None
+    header = []
     for line in lines:
         line = line.split()
         if not line:
