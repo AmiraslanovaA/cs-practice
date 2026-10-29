@@ -10,7 +10,7 @@ def block(matrix: list[list[float]], rows: list[int], columns: list[int]) -> lis
     if not matrix:
         return []
     arr = np.asarray(matrix, dtype = float)
-    blocks = arr[np.ix(rows,columns)]
+    blocks = arr[np.ix_(rows,columns)]
     return np.round(blocks, 6).tolist()
 
 ##def column_means(matrix: list[list[float]]) -> list[float]:
