@@ -13,4 +13,17 @@ def block(matrix: list[list[float]], rows: list[int], columns: list[int]) -> lis
     blocks = arr[np.ix_(rows,columns)]
     return np.round(blocks, 6).tolist()
 
-##def column_means(matrix: list[list[float]]) -> list[float]:
+def column_means(matrix: list[list[float]]) -> list[float]:
+    if not matrix:
+        return []
+    arr = np.asarray(matrix, dtype = float)
+    means = np.mean(arr, axis = 0)
+    np.round(means,6).tolist()
+
+def column_range(matrix: list[list[float]], column: int) -> float:
+    if not matrix:
+        return 0.0
+    arr = np.asarray(matrix, dtype = float)
+    colmean = arr[:column]
+    maxwithoutmin = np.max(colmean) - np.min(colmean)
+    return float(np.round(maxwithoutmin,6))
