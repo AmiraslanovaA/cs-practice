@@ -7,6 +7,48 @@ identity = np.full((3,3),1)
 print(hours)
 print(hours.shape)
 print(hours.ndim)
-print(housr.size)
+print(hours.size)
 print(hours.dtype)
 print(hours[2],hours[-1],hours[2:6],hours[::2],hours[::-1])
+temperatures = np.array([
+    [12, 14, 13, 15],
+    [11, 13, 16, 17],
+    [10, 12, 15, 18],
+])
+print(temperatures.shape)
+print(temperatures.ndim)
+print(temperatures.size)
+print(temperatures[1,2])
+print(temperatures[0,:])
+print(temperatures[:,-1])
+print(temperatures[0:2,1:])
+print(temperatures[0:2,1:3])
+matrix = np.arange(1, 26).reshape(5, 5)
+print(matrix[0:3,:],matrix[0:3,:].shape)
+print(matrix[-2:,:],matrix[-2:,:].shape)
+print(matrix[:,0:2],matrix[:,0:2].shape)
+print(matrix[1:4,2:5],matrix[1:4,2:5].shape)
+print(matrix[-2:,-2:],matrix[-2:,-2:].shape)
+vector = np.array([10, 20, 30, 40, 50])
+vector[1:4] = 0
+small_matrix = np.arange(1, 10).reshape(3, 3)
+small_matrix[0, :] = -1
+small_matrix[1:, 1:] = 9
+changed_hours = hours.copy() ## copy нужна, чтобы исходный массив не изменился
+changed_hours[2:5] = 99
+changed_hours[::2] = -1
+print(changed_hours)
+print(hours)
+changed_matrix = matrix.copy()
+changed_matrix[1,:] = 0
+changed_matrix[:,-1] = -1
+changed_matrix[1:4,1:4] = 100
+print(changed_matrix)
+print(matrix)
+numbers = np.arange(12)
+print(numbers,numbers.shape)
+numbers = numbers.reshape(3, 4)
+print(numbers,numbers.shape)
+numbers = numbers.T
+print(numbers,numbers.shape)
+## reshape(5, 3) вызовет ошибку потому что из 12 элементов нельзя создать матрицу на 15 элементов, а в reshape(3, 4) элементов 12
