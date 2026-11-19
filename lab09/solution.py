@@ -7,10 +7,10 @@ def make_hours() -> list[int]:
 def vector_report(values: list[float]) -> dict:
     arr = np.asarray(values, dtype = float)
     return dict(third = float(arr[2]),
-                lasr = float(arr[-1]),
-                middlesl = arr[2:6].tolist(),
-                everysecond = arr[::2].tolist(),
-                reverse = arr[::-1].tolist())
+                last = float(arr[-1]),
+                middle = arr[2:6].tolist(),
+                every_second = arr[::2].tolist(),
+                reversed = arr[::-1].tolist())
 
 def change_vector(values: list[float]) -> list[float]:
     arr = np.asarray(values, dtype = float).copy()
